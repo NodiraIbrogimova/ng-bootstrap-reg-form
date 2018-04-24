@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormGroup} from '@angular/forms';
+import {Data} from '../data';
 
 @Component({
   selector: 'app-modal-content',
@@ -8,7 +9,10 @@ import {FormGroup} from '@angular/forms';
   styleUrls: ['./modal-content.component.css']
 })
 export class ModalContentComponent {
-  form: FormGroup;
+  fName;
+  mName;
+  lName;
+  form = new Data("", "", "");
   submitted = false;
 
   constructor(public activeModal: NgbActiveModal) {
@@ -16,6 +20,7 @@ export class ModalContentComponent {
 
   onSubmit() {
     console.log("onSubmit works");
+
     this.submitted = true;
   }
 

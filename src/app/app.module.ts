@@ -6,6 +6,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
 import {FormsModule} from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import {FormControl} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { FormComponent } from './form/form.component';
     BrowserModule,
     NgbModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

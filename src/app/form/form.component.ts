@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Data} from '../data';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
