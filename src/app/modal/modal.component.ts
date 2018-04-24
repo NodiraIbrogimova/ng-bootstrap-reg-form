@@ -15,11 +15,5 @@ export class ModalComponent {
 
   open() {
     const modalRef = this.modalService.open(ModalContentComponent, {centered: true});
-    modalRef.componentInstance.firstName = "Name";
-    modalRef.componentInstance.middleName = "Name";
-    modalRef.componentInstance.lastName = "Name";
-    // some comment
-
-    //some comment in regfeature 
   }
 }

@@ -8,9 +8,6 @@ import {FormGroup} from '@angular/forms';
   styleUrls: ['./modal-content.component.css']
 })
 export class ModalContentComponent {
-  @Input() firstName;
-  @Input() middleName;
-  @Input() lastName;
   form: FormGroup;
   submitted = false;
 

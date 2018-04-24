@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Data} from '../data';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -7,12 +8,13 @@ import {Data} from '../data';
 })
 export class FormComponent implements OnInit {
 
-  formData = new Data("Nodira", "Khon","Ibrogimova");
-  constructor() { }
+  formData = new Data("Harmony", "Ludovic", "Arnaud");
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 
 
 }
