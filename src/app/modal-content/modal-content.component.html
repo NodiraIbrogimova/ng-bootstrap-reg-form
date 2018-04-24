@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title">Registration Form</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form  #heroForm="ngForm">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="middleName">Middle Name</label>
+      <input id="middleName" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" class="form-control" required>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-success" (click)="onSubmit()">Submit</button>
+  <button type="button" class="btn btn-outline-primary" (click)="activeModal.close('Close click')">Close</button>
+</div>
