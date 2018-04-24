@@ -18,6 +18,8 @@ export class ModalComponent {
     modalRef.componentInstance.firstName = "Name";
     modalRef.componentInstance.middleName = "Name";
     modalRef.componentInstance.lastName = "Name";
-    // some comment 
+    // some comment
+
+    //some comment in regfeature 
   }
 }
