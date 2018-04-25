@@ -1,27 +1,29 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormGroup} from '@angular/forms';
-import {Data} from '../data';
 
 @Component({
   selector: 'app-modal-content',
   templateUrl: './modal-content.component.html',
   styleUrls: ['./modal-content.component.css']
 })
-export class ModalContentComponent {
-  fName;
-  mName;
-  lName;
-  form = new Data("", "", "");
-  submitted = false;
+export class ModalContentComponent implements OnInit{
+  @Input() forEditPerson: Person;
+  person: Person = {
+    firstName: '',
+    middleName: '',
+    lastName: ''
+  };
+  ngOnInit() {
+    if (this.forEditPerson) {
+      this.person = this.forEditPerson;
+    }
+  }
 
   constructor(public activeModal: NgbActiveModal) {
   }
 
-  onSubmit() {
-    console.log("onSubmit works");
-
-    this.submitted = true;
+  save() {
+    this.activeModal.close(this.person);
   }
 
 }

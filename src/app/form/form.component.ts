@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Data} from '../data';
-import {FormControl} from '@angular/forms';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ModalContentComponent} from '../modal-content/modal-content.component';
 
 @Component({
   selector: 'app-form',
@@ -9,13 +10,34 @@ import {FormControl} from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  formData = new Data("Harmony", "Ludovic", "Arnaud");
+  public list: Data[] = [];
+  submitted: boolean;
+  form = {
+    firstName: "",
+    middleName: "",
+    lastName: ""
+  }
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
   }
 
   ngOnInit() {
+    this.submitted = true;
   }
 
+  get diagnostic() {
+    return JSON.stringify(this.list);
+  }
+
+  open() {
+    const modalRef = this.modalService.open(ModalContentComponent, {centered: true});
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    console.log("I pressed the submit button");
+    this.list.push({firstName: this.form.firstName, middleName: this.form.middleName, lastName: this.form.lastName});
+
+  }
 
 }

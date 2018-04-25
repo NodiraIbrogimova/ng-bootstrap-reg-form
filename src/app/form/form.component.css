@@ -1,6 +1,5 @@
-.container-fluid{
-  top: 30vh !important;
-  background-color: #ececec;
-  border-radius: 10px;
+.container-fluid {
+  /* background-color: #ececec; */
+  border-radius: 10px 10px 0 0;
   padding: 32px 32px 64px 32px;
 }

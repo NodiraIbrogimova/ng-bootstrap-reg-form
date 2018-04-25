@@ -3,17 +3,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ModalContentComponent } from './modal-content/modal-content.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from './modal/modal.component';
 import {FormsModule} from '@angular/forms';
 import { FormComponent } from './form/form.component';
-import {FormControl} from '@angular/forms';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalContentComponent,
-    ModalComponent,
     FormComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +22,6 @@ import {FormControl} from '@angular/forms';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalContentComponent],
+  entryComponents: [FormComponent, ModalContentComponent],
 })
 export class AppModule { }
