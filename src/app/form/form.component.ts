@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Data} from '../data';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ModalContentComponent} from '../modal-content/modal-content.component';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -10,15 +10,20 @@ import {ModalContentComponent} from '../modal-content/modal-content.component';
 })
 export class FormComponent implements OnInit {
 
-  public list: Data[] = [];
+  public list: Person[] = [];
+  groupForm: FormGroup;
   submitted: boolean;
   form = {
-    firstName: "",
-    middleName: "",
-    lastName: ""
+    firstName: '',
+    middleName: '',
+    lastName: ''
   }
+  public states = [
+    'Banggok', 'Tashkent', 'Seoul', 'Incheon'
+  ];
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
+    this.createForm();
   }
 
   ngOnInit() {
@@ -35,9 +40,24 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log("I pressed the submit button");
     this.list.push({firstName: this.form.firstName, middleName: this.form.middleName, lastName: this.form.lastName});
 
+  }
+
+  createForm() {
+    this.groupForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      middleName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      state: '',
+      city: '',
+      address: this.formBuilder.group({
+        street: '',
+        citY: '',
+        state: '',
+        zip: '',
+      }),
+    });
   }
 
 }

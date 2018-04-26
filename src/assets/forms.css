@@ -2,5 +2,5 @@
   border-left: 5px solid #42A948; /*border green if required form filed is valid */
 }
 .ng-invalid:not(form){
-  border-left: 5px solid #a94442; /*border red if form is invalid*/
+  border-left: 5px solid #a94442; /**/
 }
