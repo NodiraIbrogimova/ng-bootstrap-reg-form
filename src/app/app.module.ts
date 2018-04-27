@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {UserService} from './user.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
   entryComponents: [FormComponent, ModalContentComponent],
 })
