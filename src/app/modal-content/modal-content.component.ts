@@ -28,16 +28,19 @@ export class ModalContentComponent {
 
   createForm() {
     this.modalGroup = this.formBuilder.group({
-      name: "",
-      street: "",
-      city: "",
-      state: "",
-      zip: "",
+      name: '',
+      street: '',
+      city: '',
+      state: '',
+      zip: '',
     });
   }
 
   save(list) {
-    this.activeModal.close({index: this.index, user: { name: "changedName"}});
+    console.log('this is log');
+    this.modalList = list;
+    console.log(list);
+    return this.modalList;
   }
 
 }
