@@ -1,16 +1,11 @@
 export class User {
-  id: string;
-  firstName: string;
-  middleName: string;
-  lastName: string;
-  address: Address;
+  name: string;
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
 }
 
-export class Address {
-  street = '';
-  city = '';
-  state = '';
-  zip = '';
-}
+export const  users: User[] = [];
 
-export const users: User[] = [];
+export const states = ['Uzbekistan', 'Russia', 'Korea', 'Germany', 'Italy', 'Brazil'];

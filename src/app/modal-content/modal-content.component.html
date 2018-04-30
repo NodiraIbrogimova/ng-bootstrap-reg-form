@@ -1,56 +1,47 @@
-<div class="modal-header">
-  <h4 class="modal-title">Registration Form</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
+<div class="container">
+  <div class="container-fluid">
+    <div class="modal-header">
+      <h2>Modal Content</h2>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="modalGroup">
+        <div class="form-group">
+          <label class="center-block">Name:
+            <input class="form-control" formControlName="name" [value]="modalList.name">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Street:
+            <input class="form-control" formControlName="street" [value]="modalList.street">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">City:
+            <input class="form-control" formControlName="city" [value]="modalList.city">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">State:
+            <select class="form-control" formControlName="state">
+              <option *ngFor="let state of states" [value]="state">{{state}}</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Zip:
+            <input class="form-control" formControlName="zip" [value]="modalList.zip">
+          </label>
+        </div>
+      </form>
+      <p>Form Group value: {{modalList | json}}</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" type="submit" (click)="save(modalList)">Save</button>
+      <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+  </div>
 </div>
-<div class="modal-body">
-  <form [formGroup]="modalForm">
-    <div class="form-group">
-      <label class="center-block">First Name<input class="form-control" formControlName="firstName"></label>
-    </div>
-    <div class="form-group">
-      <label class="center-block">Middle Name<input class="form-control" formControlName="middleName"></label>
-    </div>
-    <div class="form-group">
-      <label class="center-block">Last Name<input class="form-control" formControlName="lastName"></label>
-    </div>
-    <div class="form-group">
-      <label class="center-block">State:
-        <select class="form-control" formControlName="state">
-          <option *ngFor="let state of states" [value]="state">{{state}}</option>
-        </select>
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="center-block">City<input class="form-control" formControlName="city"></label>
-    </div>
-    <div formGroupName="address" class="well well-lg">
-      <h4>Your address info: </h4>
-      <div class="form-group">
-        <label class="center-block">Street:
-          <input class="form-control" formControlName="street">
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="center-block">City:
-          <input class="form-control" formControlName="city">
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="center-block">State:
-          <input class="form-control" formControlName="state">
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="center-block">Zip:
-          <input class="form-control" formControlName="zip">
-        </label>
-      </div>
-    </div>
-  </form>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-outline-success" (click)="save()">Submit</button>
-  <button type="button" class="btn btn-outline-primary" (click)="activeModal.close('Close click')">Close</button>
-</div>
+
