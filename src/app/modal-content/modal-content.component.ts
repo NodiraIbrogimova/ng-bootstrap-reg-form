@@ -1,11 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {Validators} from '@angular/forms';
-import {User} from '../data-model';
-
-class ModalService {
-}
 
 @Component({
   selector: 'app-modal-content',
@@ -15,7 +10,6 @@ class ModalService {
 export class ModalContentComponent {
 
   @Input() modalList;
-  @Input() index;
 
   list = this.modalList;
   modalGroup: FormGroup;
