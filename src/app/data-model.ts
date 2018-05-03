@@ -4,10 +4,19 @@ export class User {
   street: string;
   city: string;
   state: string;
-  zip: string;
+  zip: number;
+
+
+  constructor(obj) {
+    this.id = obj.id;
+    this.name = obj.name;
+    this.street = obj.street;
+    this.city = obj.city;
+    this.state = obj.state;
+    this.zip = obj.zip;
+  }
 }
 
-export const users: User[] = [];
 export const list: User[] = [];
 
 export const states = ['Uzbekistan', 'Russia', 'Korea', 'Germany', 'Italy', 'Brazil'];

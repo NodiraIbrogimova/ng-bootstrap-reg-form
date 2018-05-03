@@ -8,6 +8,7 @@ import { ModalContentComponent } from './modal-content/modal-content.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import {DataService} from './data.service';
+import {UserStoreService} from "./user-store.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import {DataService} from './data.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [DataService],
+  providers: [DataService, UserStoreService],
   bootstrap: [AppComponent],
   entryComponents: [ModalContentComponent],
 })
